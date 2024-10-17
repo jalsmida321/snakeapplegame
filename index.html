@@ -208,9 +208,20 @@
         </section>
     </main>
     
-    <footer>
-        <a href="/privacy">Privacy Policy</a> <a href="/blog/">Blog</a> <a href="/copyright">Copyright Notice</a>
-        <p>&copy; 2024 SnakeAppleGa.me. All rights reserved. 🐍🍎</p>
+    <footer style="display: flex; flex-direction: column; align-items: center; padding: 20px; background-color: #f0f0f0; font-family: Arial, sans-serif;">
+        <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 15px;">
+            <a href="/privacy" style="text-decoration: none; color: #333;">Privacy Policy</a>
+            <a href="/blog/" style="text-decoration: none; color: #333;">Blog</a>
+            <a href="/copyright" style="text-decoration: none; color: #333;">Copyright Notice</a>
+        </div>
+        <select onchange="window.location.href=this.value;" style="margin-bottom: 15px; padding: 5px; border-radius: 5px;">
+            <option value="">选择语言 / Select Language</option>
+            <option value="index.html">英语 / English</option>
+            <option value="index-zh.html">中文 / Chinese</option>
+            <option value="index-es.html">西班牙语 / Español</option>
+            <option value="index-fr.html">法语 / Français</option>
+        </select>
+        <p style="margin: 0; text-align: center;">&copy; 2024 SnakeAppleGa.me. All rights reserved. 🐍🍎</p>
     </footer>
 </body>
 </html>

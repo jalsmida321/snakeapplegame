@@ -209,9 +209,23 @@
         </section>
     </main>
     
-    <footer>
-        <a href="/privacy">गोपनीयता नीति</a> <a href="/blog/">ब्लॉग</a> <a href="/copyright">कॉपीराइट नोटिस</a>
-        <p>&copy; 2024 SnakeAppleGa.me. All rights reserved. 🐍🍎</p>
+    <footer style="display: flex; flex-direction: column; align-items: center; padding: 20px; background-color: #f0f0f0; font-family: Arial, sans-serif;">
+        <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 15px;">
+            <a href="/privacy" style="text-decoration: none; color: #333;">गोपनीयता नीति</a>
+            <a href="/blog/" style="text-decoration: none; color: #333;">ब्लॉग</a>
+            <a href="/copyright" style="text-decoration: none; color: #333;">कॉपीराइट नोटिस</a>
+        </div>
+        <select onchange="window.location.href=this.value;" style="margin-bottom: 15px; padding: 5px; border-radius: 5px;">
+            <option value=""> Select Language</option>
+            <option value="index.html">English</option>
+            <option value="/hi/index.html">हिंदी</option>
+            <option value="/tl/index.html">Filipino</option>
+            <option value="/fr/index.html">Français</option>
+            <option value="/ja/index.html">日本語</option>
+            <option value="/ar/index.html">عربي</option>
+            <option value="/ml/index.html">Melayu</option>
+        </select>
+        <p style="margin: 0; text-align: center;">&copy; 2024 SnakeAppleGa.me. All rights reserved. 🐍🍎</p>
     </footer>
 </body>
 </html>
