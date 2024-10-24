@@ -6,11 +6,29 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-
 <url>
-  <loc>https://snakeapplega.me/</loc>
-  <lastmod>2024-10-17T08:19:29+00:00</lastmod>
+<loc>https://snakeapplega.me/</loc>
+<lastmod>2024-10-24T10:15:12+00:00</lastmod>
+<priority>1.00</priority>
 </url>
-
-
+<url>
+<loc>https://snakeapplega.me/classic-snake-apple-game.html</loc>
+<lastmod>2024-10-24T10:15:12+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://snakeapplega.me/google-snake-game.html</loc>
+<lastmod>2024-10-24T10:15:13+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://snakeapplega.me/snake-apple-game-extensions.html</loc>
+<lastmod>2024-10-24T10:15:13+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://snakeapplega.me/blog/</loc>
+<lastmod>2024-10-24T10:15:13+00:00</lastmod>
+<priority>0.80</priority>
+</url>
 </urlset>
