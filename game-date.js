@@ -68,6 +68,11 @@ const gamesData = [
         href: "/game/fruit-snake.html",
         image: "https://pub-b87ee89e69e04430995d1431e31e506e.r2.dev/fruit-snake-icon.png",
         title: "Fruit Snake"
+    },
+    {
+        href: "/game/orber.html",
+        image: "https://pub-b87ee89e69e04430995d1431e31e506e.r2.dev/orber-icon.png",
+        title: "Orber"
     }
 ];
 
