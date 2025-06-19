@@ -78,6 +78,11 @@ const gamesData = [
         href: "/game/crazy-cattle-3d.html",
         image: "https://pub-b87ee89e69e04430995d1431e31e506e.r2.dev/crazy-cattle-3d-icon.jpg",
         title: "Crazy Cattle 3D"
+    },
+    {
+        href: "/game/pacman-unblocked.html",
+        image: "https://pub-b87ee89e69e04430995d1431e31e506e.r2.dev/pacman-unblocked-icon.png",
+        title: "Pacman  Unblocked"
     }
 ];
 
