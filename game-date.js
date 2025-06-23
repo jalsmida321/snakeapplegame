@@ -83,6 +83,11 @@ const gamesData = [
         href: "/game/pacman-unblocked.html",
         image: "https://pub-b87ee89e69e04430995d1431e31e506e.r2.dev/pacman-unblocked-icon.png",
         title: "Pacman  Unblocked"
+    },
+    {
+        href: "/game/snakes-and-laders.html",
+        image: "https://pub-b87ee89e69e04430995d1431e31e506e.r2.dev/snakes-and-laders-icon.jpg",
+        title: "Snakes and Laders"
     }
 ];
 
