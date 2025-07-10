@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sand Blocks - Addictive Puzzle Game with Strategic Sand Management</title>
+    <meta name="description" content="Play Sand Blocks, an addictive puzzle game that challenges players to think strategically while managing sand blocks. Align blocks to create lines, watch them turn to sand, and achieve high scores in this endless puzzle adventure.">
+    <meta name="keywords" content="Sand Blocks, puzzle game, strategic sand management, online puzzle game, free puzzle games, sand block alignment, high score strategy, endless puzzle game, addictive puzzle gameplay">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://snakeapplega.me/src/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://snakeapplega.me/src/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://snakeapplega.me/src/icons/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2200116120340744"
+     crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f8ff;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #2196F3;
+            border-bottom: 2px solid #2196F3;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #FF5722;
+        }
+        .section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #777;
+            font-style: italic;
+        }
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 20px);
+            gap: 1px;
+            width: 210px;
+            margin: 20px auto;
+            border: 1px solid #333;
+        }
+        .game-cell {
+            width: 20px;
+            height: 20px;
+            background-color: #e0e0e0;
+        }
+        .snake {
+            background-color: #4CAF50;
+        }
+        .apple {
+            background-color: #FF5722;
+            border-radius: 50%;
+        }
+        .responsive {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 aspect ratio */
+    }
+
+    .responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    .game-grid2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+            padding: 20px 0;
+        }
+        .game-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            aspect-ratio: 1 / 1;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .game-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .game-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px;
+            font-size: 12px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .game-card:hover .game-title {
+            opacity: 1;
+        }
+        .flex-container {
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+}  
+.content-wrapper {
+    margin-bottom: 20px; /* 为文字部分留出空间 */
+}
+
+.section {
+    margin-top: 20px; /* 更大间距 */
+}
+
+    @media (max-width: 600px) {
+        .responsive {
+            padding-top: 75%; /* Adjust for different aspect ratios on smaller screens */
+        }
+    }
+
+    h3 a:hover {
+    color: blue; /* 悬停时改变颜色 */
+    text-decoration: underline; /* 悬停时添加下划线 */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../" style="text-decoration: none; color: inherit;">
+        <h1>Sand Blocks</h1>
+    </a>
+        <p>An addictive puzzle game that challenges players to think strategically while managing sand blocks on the screen. Have fun now!</p>
+    </header>
+    
+    <main>
+        <section id="game" class="content-wrapper ind-iframe triple">
+            <div class="responsive">
+                <iframe src="https://sandtrix.io/sand-blocks.embed" loading="eager" style="background-color: #ffffff;
+   padding: 0px;
+   border: 0px none transparent;
+   border-radius: 0px;
+   width: 100%;
+   height: 450px" allowFullScreen allow="fullscreen;
+   fullscreen" webkitallowfullscreen mozallowfullscreen importance="auto"></iframe>
+            </div>
+        </section>
+
+        <section class="section" style="margin-top: 250px;">
+            <h2><span class="icon">🎮</span>Popular Game</h2>
+            <div class="game-grid2" id="games-container">
+            </div>
+        </section>
+
+        <section id="seo" class="bg-white tx-black pad-h-m pad-v-l"> <h2>About Sand Blocks</h2> <p>Sand Blocks is an addictive puzzle game that challenges players to think strategically while managing sand blocks on the screen. The core gameplay revolves around aligning blocks to create lines of three or more identical types, which then disappear and contribute to your score. The dynamic nature of the game keeps players engaged as blocks fall and shift, creating new opportunities for strategic combinations.</p> <p>When blocks are removed, they transform into sand and may cause other blocks to fall into place, potentially creating chain reactions. This mechanic adds depth to the gameplay, requiring players to anticipate how their moves will affect the overall board state. Unlike traditional puzzle games with fixed levels, Sand Blocks offers an endless mode that allows you to play indefinitely, constantly challenging you to beat your previous high score.</p> </section>
+
+            <section class="how-to-play section">
+                <h2>How to Play Sand Blocks</h2>
+                <ol>
+                    <li>Manipulate sand blocks to align them horizontally or vertically</li>
+                    <li>Create lines of three or more identical blocks to remove them from the board</li>
+                    <li>Watch as removed blocks transform into sand and cause remaining blocks to fall</li>
+                    <li>Look for opportunities to create chain reactions with your removals</li>
+                    <li>Continue playing indefinitely in the endless game mode</li>
+                </ol>
+            </section>
+
+            <section class="strategies section">
+                <h2>High Score Strategies</h2>
+                <p>Achieving a high score in Sand Blocks revolves around effectively managing and removing sand blocks by aligning them strategically. The key mechanics involve creating lines of the same type of sand, which leads to their removal and contributes to your score.</p>
+                <div class="tips">
+                    <h3>Pro Tips:</h3>
+                    <ul>
+                        <li>Focus on creating larger combinations of 4 or 5 blocks for significantly higher scores</li>
+                        <li>Plan your moves in advance to anticipate how blocks will fall after removals</li>
+                        <li>Look for opportunities to create multiple line removals with a single move</li>
+                        <li>Develop a pattern recognition system to quickly identify potential combinations</li>
+                        <li>Stay patient and avoid making hasty moves that might limit future scoring opportunities</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="features section">
+                <h2>Game Features</h2>
+                <ul>
+                    <li>Addictive puzzle gameplay that requires strategic thinking</li>
+                    <li>Dynamic block mechanics where removed blocks turn into sand</li>
+                    <li>Endless game mode for unlimited playtime</li>
+                    <li>Chain reaction potential for massive score combinations</li>
+                    <li>Vibrant visuals and satisfying sound effects</li>
+                    <li>Simple controls that anyone can learn quickly</li>
+                    <li>Progressive difficulty as you play longer</li>
+                    <li>Compare your scores with friends and players worldwide</li>
+                </ul>
+            </section>
+
+            <section class="faq section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h3>How do blocks turn into sand?</h3>
+                    <p>Blocks transform into sand when they touch the ground or other sand after being removed. This creates dynamic board changes as remaining blocks fall into new positions.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What makes Sand Blocks different from other puzzle games?</h3>
+                    <p>Unlike traditional puzzle games with fixed levels, Sand Blocks offers endless gameplay with constantly changing board dynamics and chain reaction potential.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is there a limit to how long I can play?</h3>
+                    <p>No, Sand Blocks features an endless mode that allows you to play indefinitely, challenging you to beat your previous high scores.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How does Sand Blocks compare to Sandtrix?</h3>
+                    <p>Both games share the core mechanic where blocks turn into sand, creating dynamic gameplay. Sand Blocks offers unique visual style and endless mode features.</p>
+                </div>
+            </section>
+    </main>
+    
+    <footer style="display: flex; flex-direction: column; align-items: center; padding: 20px; background-color: #f0f0f0; font-family: Arial, sans-serif;">
+        <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 15px;">
+            <a href="https://snakeapplega.me/privacy.html" style="text-decoration: none; color: #333;">Privacy Policy</a>
+            <a href="https://snakeapplega.me/blog/" style="text-decoration: none; color: #333;">Blog</a>
+            <a href="https://snakeapplega.me/copyright.html" style="text-decoration: none; color: #333;">Copyright Notice</a>
+        </div>
+        <select onchange="window.location.href=this.value;" style="margin-bottom: 15px; padding: 5px; border-radius: 5px;">
+            <option value=""> Select Language</option>
+            <option value="index.html">English</option>
+            <option value="/hi/index.html">हिंदी</option>
+            <option value="/tl/index.html">Filipino</option>
+            <option value="/fr/index.html">Français</option>
+            <option value="/ja/index.html">日本語</option>
+            <option value="/ar/index.html">عربي</option>
+            <option value="/ml/index.html">Melayu</option>
+        </select>
+        <p style="margin: 0; text-align: center;">&copy; 2024 SnakeAppleGa.me. All rights reserved. 🐍🍎</p>
+    </footer>
+    <script src="../game-date.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            renderGames('games-container');
+        });
+    </script>
+    <div style="display:none;">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JG3HGMNS6B"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-JG3HGMNS6B');
+     </script>
+    </div>
+</body>
+</html>
