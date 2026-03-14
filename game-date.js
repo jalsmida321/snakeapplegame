@@ -93,6 +93,11 @@ const gamesData = [
         href: "/game/sand-blocks.html",
         image: "https://pub-b87ee89e69e04430995d1431e31e506e.r2.dev/sand-blocks-icon.png",
         title: "Sand Blocks"
+    },
+    {
+        href: "/game/snake-out.html",
+        image: "https://pub-b87ee89e69e04430995d1431e31e506e.r2.dev/snake-out-icon.jpg",
+        title: "Snake Out"
     }
 ];
 
