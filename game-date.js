@@ -30,34 +30,9 @@ const gamesData = [
         title: "Blocky Snake"
     },
     {
-        href: "/game/react-tetris.html",
-        image: "https://pub-b87ee89e69e04430995d1431e31e506e.r2.dev/react-tetris-icon.png",
-        title: "React Tetris"
-    },
-    {
-        href: "/game/subway-surf-zurich.html",
-        image: "https://pub-b87ee89e69e04430995d1431e31e506e.r2.dev/subway-surf-zurich-icon.png",
-        title: "Subway Surf Zurich"
-    },
-    {
-        href: "/game/comball.html",
-        image: "https://pub-b87ee89e69e04430995d1431e31e506e.r2.dev/comball-icon.png",
-        title: "Comball"
-    },
-    {
-        href: "https://golforbit.online/",
-        image: "https://pub-b87ee89e69e04430995d1431e31e506e.r2.dev/golf-orbit-icon.png",
-        title: "Golf Orbit"
-    },
-    {
         href: "/game/snake-2048.html",
         image: "https://pub-b87ee89e69e04430995d1431e31e506e.r2.dev/snake-2048-icon.png",
         title: "Snake 2048"
-    },
-    {
-        href: "/game/sprunki.html",
-        image: "https://pub-b87ee89e69e04430995d1431e31e506e.r2.dev/sprunki-game-icon.png",
-        title: "Sprunki"
     },
     {
         href: "/game/snakes-and-apples.html",
@@ -75,24 +50,9 @@ const gamesData = [
         title: "Orber"
     },
     {
-        href: "/game/crazy-cattle-3d.html",
-        image: "https://pub-b87ee89e69e04430995d1431e31e506e.r2.dev/crazy-cattle-3d-icon.jpg",
-        title: "Crazy Cattle 3D"
-    },
-    {
-        href: "/game/pacman-unblocked.html",
-        image: "https://pub-b87ee89e69e04430995d1431e31e506e.r2.dev/pacman-unblocked-icon.png",
-        title: "Pacman  Unblocked"
-    },
-    {
         href: "/game/snakes-and-laders.html",
         image: "https://pub-b87ee89e69e04430995d1431e31e506e.r2.dev/snakes-and-laders-icon.jpg",
         title: "Snakes and Laders"
-    },
-    {
-        href: "/game/sand-blocks.html",
-        image: "https://pub-b87ee89e69e04430995d1431e31e506e.r2.dev/sand-blocks-icon.png",
-        title: "Sand Blocks"
     },
     {
         href: "/game/snake-out.html",
@@ -107,7 +67,7 @@ function renderGames(containerId) {
     
     const gamesHTML = gamesData.map(game => `
         <a href="${game.href}" class="game-card">
-            <img src="${game.image}" alt="${game.title}">
+            <img src="${game.image}" alt="${game.title}" width="120" height="120" loading="lazy">
             <div class="game-title">${game.title}</div>
         </a>
     `).join('');
