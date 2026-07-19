@@ -84,6 +84,25 @@
             padding: 8px 0 5px;
         }
 
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .trophy-link {
+            display: grid;
+            place-items: center;
+            width: 44px;
+            height: 44px;
+            background: var(--sun);
+            border: 2px solid var(--ink);
+            border-radius: 50%;
+            box-shadow: 3px 3px 0 var(--ink);
+            font-size: 22px;
+            text-decoration: none;
+        }
+
         .hero {
             position: relative;
             padding: clamp(58px, 9vw, 108px) 0 54px;
@@ -301,7 +320,10 @@
             <span class="brand-mark" aria-hidden="true">S</span>
             <span>SnakeAppleGa.me</span>
         </a>
-        <a class="home-link" href="/">Back Home</a>
+        <div class="header-actions">
+            <a class="home-link" href="/">Back Home</a>
+            <a class="trophy-link" href="/leaderboard/" aria-label="Snake Apple Game Leaderboard" title="Leaderboard">🏆</a>
+        </div>
     </header>
 
     <main class="shell">

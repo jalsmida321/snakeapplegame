@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Apple Game Leaderboard - World Records &amp; High Scores</title>
+    <meta name="description" content="View the Snake Apple Game leaderboard, compare high scores, and discover top player world records. Check the latest rankings and challenge the best score.">
+    <link rel="canonical" href="https://snakeapplega.me/leaderboard/">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="theme-color" content="#173a2a">
+    <style>
+        :root {
+            --ink: #173a2a;
+            --ink-soft: #28543e;
+            --cream: #f7f0db;
+            --paper: #fffdf6;
+            --gold: #f0b83e;
+            --gold-light: #ffdb7a;
+            --apple: #d94b3d;
+            --line: rgba(23, 58, 42, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 88% 8%, rgba(240, 184, 62, 0.26), transparent 24rem),
+                linear-gradient(rgba(23, 58, 42, 0.04) 1px, transparent 1px),
+                var(--cream);
+            background-size: auto, 100% 32px, auto;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .shell {
+            width: min(1120px, calc(100% - 32px));
+            margin: 0 auto;
+        }
+
+        .site-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .brand-mark,
+        .trophy-link {
+            display: grid;
+            place-items: center;
+            width: 44px;
+            height: 44px;
+            border: 2px solid var(--ink);
+        }
+
+        .brand-mark {
+            width: 36px;
+            height: 36px;
+            color: white;
+            background: var(--ink-soft);
+            border-radius: 50% 50% 50% 18%;
+            box-shadow: 3px 3px 0 var(--ink);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-actions > a:not(.trophy-link) {
+            font: 700 0.72rem/1 Arial, sans-serif;
+            letter-spacing: 0.12em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .trophy-link {
+            color: var(--ink);
+            background: var(--gold);
+            border-radius: 50%;
+            box-shadow: 4px 4px 0 var(--ink);
+            transition: transform 150ms ease, box-shadow 150ms ease;
+        }
+
+        .trophy-link:hover,
+        .trophy-link:focus-visible {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 var(--ink);
+            outline: 3px solid var(--paper);
+            outline-offset: 2px;
+        }
+
+        .trophy-link svg {
+            width: 23px;
+            height: 23px;
+            fill: currentColor;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            align-items: end;
+            gap: 40px;
+            padding: clamp(56px, 9vw, 100px) 0 48px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin: 0 0 18px;
+            padding: 7px 11px;
+            background: var(--gold);
+            border: 1px solid var(--ink);
+            box-shadow: 3px 3px 0 var(--ink);
+            font: 700 0.72rem/1 Arial, sans-serif;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            max-width: 780px;
+            margin: 0;
+            font-size: clamp(3.1rem, 8vw, 7.2rem);
+            line-height: 0.88;
+            letter-spacing: -0.065em;
+        }
+
+        .intro {
+            max-width: 710px;
+            margin: 26px 0 0;
+            font: 1.05rem/1.7 Arial, sans-serif;
+        }
+
+        .rank-seal {
+            display: grid;
+            place-items: center;
+            width: clamp(116px, 15vw, 176px);
+            aspect-ratio: 1;
+            color: var(--ink);
+            background: var(--gold-light);
+            border: 3px solid var(--ink);
+            border-radius: 50%;
+            box-shadow: 12px 12px 0 var(--ink);
+            transform: rotate(7deg);
+        }
+
+        .rank-seal svg {
+            width: 54%;
+            fill: currentColor;
+        }
+
+        .scoreboard {
+            padding: 18px;
+            background: var(--ink);
+            border: 3px solid var(--ink);
+            box-shadow: 12px 12px 0 var(--apple);
+        }
+
+        .scoreboard-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 2px 2px 16px;
+            color: white;
+            font: 700 0.72rem/1.3 Arial, sans-serif;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .scoreboard iframe {
+            display: block;
+            width: 100%;
+            height: 720px;
+            background: white;
+            border: 0;
+        }
+
+        .sheet-fallback {
+            margin: 18px 0 0;
+            color: white;
+            font: 0.9rem/1.5 Arial, sans-serif;
+        }
+
+        .sheet-fallback a {
+            color: var(--gold-light);
+            font-weight: 700;
+        }
+
+        .details {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            padding: 72px 0;
+        }
+
+        .detail-card {
+            padding: clamp(24px, 4vw, 40px);
+            background: var(--paper);
+            border: 2px solid var(--ink);
+        }
+
+        .detail-card h2 {
+            margin: 0 0 14px;
+            font-size: clamp(1.65rem, 3vw, 2.5rem);
+            letter-spacing: -0.035em;
+        }
+
+        .detail-card p {
+            margin: 0;
+            font: 0.98rem/1.7 Arial, sans-serif;
+        }
+
+        .challenge {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 72px;
+            padding: clamp(28px, 5vw, 52px);
+            color: white;
+            background: var(--ink);
+        }
+
+        .challenge h2 {
+            margin: 0 0 8px;
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            letter-spacing: -0.045em;
+        }
+
+        .challenge p {
+            margin: 0;
+            font: 0.98rem/1.6 Arial, sans-serif;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .button {
+            display: inline-block;
+            min-width: 150px;
+            padding: 14px 18px;
+            color: var(--ink);
+            background: var(--gold);
+            border: 2px solid white;
+            font: 700 0.76rem/1 Arial, sans-serif;
+            letter-spacing: 0.1em;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .button.secondary {
+            color: white;
+            background: transparent;
+        }
+
+        .site-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 22px;
+            padding: 26px 0 36px;
+            border-top: 1px solid var(--line);
+            font: 0.86rem/1.5 Arial, sans-serif;
+        }
+
+        .site-footer nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        @media (max-width: 720px) {
+            .shell {
+                width: min(100% - 22px, 1120px);
+            }
+
+            .header-actions > a:not(.trophy-link) {
+                display: none;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 52px 0 38px;
+            }
+
+            .rank-seal {
+                display: none;
+            }
+
+            .scoreboard {
+                padding: 10px;
+                box-shadow: 7px 7px 0 var(--apple);
+            }
+
+            .scoreboard-bar {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .scoreboard iframe {
+                height: 620px;
+            }
+
+            .details {
+                grid-template-columns: 1fr;
+                padding: 52px 0;
+            }
+
+            .challenge,
+            .site-footer {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .trophy-link {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="shell site-header">
+        <a class="brand" href="/">
+            <span class="brand-mark" aria-hidden="true">S</span>
+            <span>SnakeAppleGa.me</span>
+        </a>
+        <nav class="header-actions" aria-label="Primary navigation">
+            <a href="/games/">All Games</a>
+            <a class="trophy-link" href="/leaderboard/" aria-current="page" aria-label="Snake Apple Game Leaderboard" title="Leaderboard">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2H6v2H3v5c0 2.2 1.8 4 4 4h.3A6 6 0 0 0 11 15.9V19H7v3h10v-3h-4v-3.1a6 6 0 0 0 3.7-2.9h.3c2.2 0 4-1.8 4-4V4h-3V2ZM7 11a2 2 0 0 1-2-2V6h1v3c0 .7.1 1.4.4 2H7Zm9-2a4 4 0 0 1-8 0V4h8v5Zm3 0a2 2 0 0 1-2 2h-.4c.3-.6.4-1.3.4-2V6h2v3Z"/></svg>
+            </a>
+        </nav>
+    </header>
+
+    <main class="shell">
+        <section class="hero">
+            <div>
+                <p class="eyebrow">World records / high scores</p>
+                <h1>Snake Apple Game Leaderboard</h1>
+                <p class="intro">View the latest Snake Apple Game high scores and world records. Compare player rankings, find the score to beat, and return to the game to challenge the top of the leaderboard.</p>
+            </div>
+            <div class="rank-seal" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M18 2H6v2H3v5c0 2.2 1.8 4 4 4h.3A6 6 0 0 0 11 15.9V19H7v3h10v-3h-4v-3.1a6 6 0 0 0 3.7-2.9h.3c2.2 0 4-1.8 4-4V4h-3V2ZM7 11a2 2 0 0 1-2-2V6h1v3c0 .7.1 1.4.4 2H7Zm9-2a4 4 0 0 1-8 0V4h8v5Zm3 0a2 2 0 0 1-2 2h-.4c.3-.6.4-1.3.4-2V6h2v3Z"/></svg>
+            </div>
+        </section>
+
+        <section class="scoreboard" aria-labelledby="rankings-heading">
+            <div class="scoreboard-bar">
+                <span id="rankings-heading">Current Snake Apple Game Rankings</span>
+                <span>Live Google Sheets board</span>
+            </div>
+            <iframe src="https://docs.google.com/spreadsheets/d/1D0f6Q4dJSvigZC9W5A_pCW928FY2b3T9FfKo15xLkqw/preview?gid=0" title="Snake Apple Game leaderboard and world records" loading="lazy"></iframe>
+            <p class="sheet-fallback">If the leaderboard does not load, <a href="https://docs.google.com/spreadsheets/d/1D0f6Q4dJSvigZC9W5A_pCW928FY2b3T9FfKo15xLkqw/preview?gid=0" target="_blank" rel="noopener noreferrer">open the Snake Apple Game leaderboard in Google Sheets</a>.</p>
+        </section>
+
+        <section class="details">
+            <article class="detail-card">
+                <h2>Snake Apple Game World Records</h2>
+                <p>The scoreboard collects top Snake Apple Game scores in one place so players can compare results and follow the current world-record target. Rankings may change whenever the source sheet is updated.</p>
+            </article>
+            <article class="detail-card">
+                <h2>How the Leaderboard Works</h2>
+                <p>Use the embedded table to review player names, scores, and available record details. This page displays the shared rankings; the source spreadsheet remains responsible for leaderboard entries and updates.</p>
+            </article>
+        </section>
+
+        <section class="challenge">
+            <div>
+                <h2>Can you beat the high score?</h2>
+                <p>Play Snake Apple Game, improve your route, and chase the next leaderboard position.</p>
+            </div>
+            <div class="buttons">
+                <a class="button" href="/">Play Snake</a>
+                <a class="button secondary" href="/games/">Browse All Games</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="shell site-footer">
+        <nav aria-label="Footer">
+            <a href="/games/">All Games</a>
+            <a href="/leaderboard/">Leaderboard</a>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/copyright.html">Copyright Notice</a>
+        </nav>
+        <span>&copy; 2024 SnakeAppleGa.me</span>
+    </footer>
+</body>
+</html>
